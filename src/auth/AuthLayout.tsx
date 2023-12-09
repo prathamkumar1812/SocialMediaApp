@@ -4,6 +4,7 @@ import { Outlet ,Navigate } from 'react-router-dom'
 
 function AuthLayout() {
   const { isAuthenticated } = UseUserContext();
+  console.log(isAuthenticated);
   return (
     <>{
         isAuthenticated ? (<Navigate to="/" /> ):
