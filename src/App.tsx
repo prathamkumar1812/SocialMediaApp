@@ -1,4 +1,3 @@
-import { useState } from 'react'
 
 import {Routes, Route} from 'react-router-dom'
 import SigninForm from './auth/forms/SigninForm'
@@ -16,7 +15,6 @@ import PostDetails from './root/pages/PostDetails'
 import Profile from './root/pages/Profile'
 import UpdateProfile from './root/pages/UpdateProfile'
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
