@@ -158,7 +158,6 @@ export const useLikePost = () => {
       },
     });
   };
-
   export const useGetPosts = () => {
     return useInfiniteQuery({
       queryKey: [QUERY_KEYS.GET_INFINITE_POSTS],
@@ -172,8 +171,9 @@ export const useLikePost = () => {
         // Use the $id of the last document as the cursor.
         const lastId = lastPage.documents[lastPage.documents.length - 1].$id;
         return lastId;
-      }
-    })
+      },
+      initialPageParam:null
+    });
   };
   
   export const useSearchPosts = (searchTerm: string) => {
