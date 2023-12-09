@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import  { useEffect } from 'react'
 import { Link ,NavLink,useNavigate,useLocation} from 'react-router-dom'
 import { Button } from '../ui/button'
 import { useSignOutAccount } from '@/lib/react-query/queriesAndMutation'
 import { UseUserContext } from '@/context/AuthContext'
 import { sidebarLink } from '@/constants'
 import { INavLink } from '@/types'
-import { Loader } from 'lucide-react'
+
 
 function LeftSideBar() {
     const navigate=useNavigate();
@@ -18,6 +18,7 @@ function LeftSideBar() {
         if(isSuccess){
             navigate(0);
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[isSuccess])
 
     

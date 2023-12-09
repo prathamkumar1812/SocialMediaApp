@@ -1,10 +1,11 @@
+import GridPostList from '@/components/shared/GridPostList';
 import Loader from '@/components/shared/Loader';
 import PostStats from '@/components/shared/PostStats';
 import { Button } from '@/components/ui/button';
 import { UseUserContext } from '@/context/AuthContext';
 import { useDeletePost, useGetPostById, useGetUserPosts } from '@/lib/react-query/queriesAndMutation';
 import { multiFormatDateString } from '@/lib/utils';
-import React from 'react'
+
 import { Link, useNavigate, useParams } from 'react-router-dom';
 
 const PostDetails = () => {
@@ -127,7 +128,7 @@ const PostDetails = () => {
               </div>
   
               <div className="w-full">
-                <PostStats post={post} userid={user.id} />
+                <PostStats post={post} userId={user.id} />
               </div>
             </div>
           </div>
@@ -141,8 +142,8 @@ const PostDetails = () => {
           </h3>
           {isUserPostLoading || !relatedPosts ? (
             <Loader />
-          ) : (<></>
-            // <GridPostList posts={relatedPosts} />
+          ) : (
+            <GridPostList posts={relatedPosts} />
           )}
         </div>
       </div>

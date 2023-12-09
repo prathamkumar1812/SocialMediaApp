@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import  { useEffect } from 'react'
 import { Link ,useNavigate} from 'react-router-dom'
 import { Button } from '../ui/button'
 import { useSignOutAccount } from '@/lib/react-query/queriesAndMutation'
@@ -12,6 +12,7 @@ function Topbar() {
         if(isSuccess){
             navigate(0);
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[isSuccess])
   return (
     <section className='topbar'>

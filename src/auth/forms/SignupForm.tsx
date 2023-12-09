@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
@@ -20,7 +20,7 @@ import { Link,useNavigate } from 'react-router-dom'
 
 import { useCreateUserAccount, useSignInAccount } from '@/lib/react-query/queriesAndMutation'
 import { UseUserContext } from '@/context/AuthContext'
-import { Loader2Icon } from 'lucide-react'
+
 
 
 
@@ -31,8 +31,8 @@ function SignupForm() {
   const { toast } = useToast()
   const navigate=useNavigate();
   const {checkAuthUser,isLoading:isUserLoading}=UseUserContext();
- const {mutateAsync:createUserAccount,isPending:isCreateingUser}=useCreateUserAccount();
- const {mutateAsync:signInAccount,isPending:isSigningIn}=useSignInAccount()
+ const {mutateAsync:createUserAccount,isPending:isCreatingAccount}=useCreateUserAccount();
+ const {mutateAsync:signInAccount,isPending: isSigningInUser}=useSignInAccount()
      // 1. Define your form.
   const form = useForm<z.infer<typeof SignupuValidation>>({
     resolver: zodResolver(SignupuValidation),
@@ -140,9 +140,13 @@ function SignupForm() {
         )}
       />
       <Button type="submit" className='shad-button_primary'>
-        {isCreateingUser ? (<div className='flex-center gap-2'>
-        <Loader2Icon/> Loading
-        </div>) : "Sign up"}
+      {isCreatingAccount || isSigningInUser || isUserLoading ? (
+              <div className="flex-center gap-2">
+                <Loader /> Loading...
+              </div>
+            ) : (
+              "Sign Up"
+            )}
       </Button>
       <p className='text-small-regular text-light-2 text-center mt-2'>
         Already have an account? 

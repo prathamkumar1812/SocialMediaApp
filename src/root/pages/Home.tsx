@@ -1,11 +1,12 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import PostCard from '@/components/shared/PostCard';
 import { useGetRecentPosts } from '@/lib/react-query/queriesAndMutation';
 import { Models } from 'appwrite';
 import Loader from '@/components/shared/Loader';
-import React from 'react'
+
 
 function Home() {
-  const {data:posts,isPending:isPostLoading,isError:isErrorPost}=useGetRecentPosts();
+  const {data:posts,isPending:isPostLoading}=useGetRecentPosts();
  
   
   return (

@@ -1,9 +1,11 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import GridPostList from '@/components/shared/GridPostList';
 import Loader from '@/components/shared/Loader';
 import { Input } from '@/components/ui/input';
 import useDebounce from '@/hooks/useDebounce';
 import { useGetPosts, useSearchPosts } from '@/lib/react-query/queriesAndMutation';
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer';
 export type SearchResultProps = {
   isSearchFetching: boolean;

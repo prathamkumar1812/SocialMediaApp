@@ -42,7 +42,7 @@ type GridPostListProps = {
                   <p className="line-clamp-1">{post.creator.name}</p>
                 </div>
               )}
-              {showStats && <PostStats post={post} userid={user.id} />}
+              {showStats && <PostStats post={post} userId ={user.id} />}
             </div>
           </li>
         ))}

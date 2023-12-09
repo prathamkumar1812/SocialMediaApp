@@ -1,7 +1,9 @@
+/* eslint-disable react-refresh/only-export-components */
 import { getCurrentUser } from '@/lib/appwrite/api';
 import { IUser } from '@/types';
 import { useNavigate } from 'react-router-dom';
 import {createContext,useContext,useEffect,useState} from 'react'
+
 
 export const INITIAL_USER={
     id:'',

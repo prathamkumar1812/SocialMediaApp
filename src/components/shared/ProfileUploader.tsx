@@ -1,3 +1,4 @@
+import { convertFileToUrl } from "@/lib/utils";
 import { useCallback, useState } from "react";
 import { FileWithPath, useDropzone } from "react-dropzone";
 
@@ -18,6 +19,7 @@ const ProfileUploader = ({ fieldChange, mediaUrl }: ProfileUploaderProps) => {
       fieldChange(acceptedFiles);
       setFileUrl(convertFileToUrl(acceptedFiles[0]));
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [file]
   );
 

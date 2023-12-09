@@ -1,8 +1,8 @@
 import Bottombar from '@/components/shared/Bottombar'
 import LeftSideBar from '@/components/shared/LeftSideBar'
-import Loader from '@/components/shared/Loader'
+
 import Topbar from '@/components/shared/Topbar'
-import React, { useEffect, useState } from 'react'
+
 import { Outlet } from 'react-router-dom'
 
 function RootLayout() {

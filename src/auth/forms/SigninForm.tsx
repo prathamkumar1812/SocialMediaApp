@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
@@ -18,9 +18,9 @@ import { SigninValidation } from '@/lib/Validation'
 import Loader from '@/components/shared/Loader'
 import { Link,useNavigate } from 'react-router-dom'
 
-import { useCreateUserAccount, useSignInAccount } from '@/lib/react-query/queriesAndMutation'
+import {  useSignInAccount } from '@/lib/react-query/queriesAndMutation'
 import { UseUserContext } from '@/context/AuthContext'
-import { Loader2Icon } from 'lucide-react'
+
 
 
 
@@ -104,9 +104,13 @@ function SigninForm() {
         )}
       />
       <Button type="submit" className='shad-button_primary'>
-        {isUserLoading ? (<div className='flex-center gap-2'>
-       <Loader2Icon/> Loading
-        </div>) : "Sign in"}
+      {isSigningIn || isUserLoading ? (
+              <div className="flex-center gap-2">
+                <Loader /> Loading...
+              </div>
+            ) : (
+              "Log in"
+            )}
       </Button>
       <p className='text-small-regular text-light-2 text-center mt-2'>
         Don't have an account? 
