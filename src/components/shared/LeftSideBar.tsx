@@ -28,10 +28,10 @@ function LeftSideBar() {
     <nav className='leftsidebar'>
         <div className='flex flex-col gap-11'>
         <Link to='/' className='flex items-center gap-3'>
-                <img src='../../../public/assets/images/logo.svg' alt='logo' width={170} height={36}/>
+                <img src='/assets/images/logo.svg' alt='logo' width={170} height={36}/>
             </Link>
             <Link to={`/profile/${user.id}`} className='flex items-center gap-3'>
-            <img src={user.imageUrl||'../../../public/assets/images/profile.png'} 
+            <img src={user.imageUrl||'/assets/images/profile.png'} 
                     alt='profile' className='h-12 w-12 rounded-full'/>
             <div className='flex flex-col'>
                 <p className='body-bold'>
@@ -60,7 +60,7 @@ function LeftSideBar() {
         </div>
         <Button variant="ghost" className='shad-button-ghost'
                 onClick={()=>signOut()}>
-                    <img src='../../../public/assets/icons/logout.svg' alt='logout'/>
+                    <img src='/assets/icons/logout.svg' alt='logout'/>
                     <p className='small-medium lg:base-medium'>Logout</p>
                 </Button>
     </nav>
